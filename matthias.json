@@ -5,7 +5,7 @@
 		{ "icon": "assets/icons/linkedin.svg", "href": "https://www.linkedin.com/in/matthias-christen-58a8b7b/" },
 		{ "icon": "assets/icons/github.svg", "href": "https://github.com/matthias-christen" },
 		{ "icon": "assets/icons/gplus.svg", "href": "https://plus.google.com/u/0/101648638387211662425" },
-		{ "icon": "assets/icons/500px.svg", "href": "https://500px.com/matthiAssemblerchristen" }
+		{ "icon": "assets/icons/500px.svg", "href": "https://500px.com/matthiasmchristen" }
 	],
 	"pdfCV": "assets/CV_Matthias_Christen.pdf",
 	"skills": [
