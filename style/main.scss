@@ -73,6 +73,7 @@ a, a:visited {
 	top: 0;
 	width: 100%;
 	height: 100vh;
+	z-index: 10;
 	transition: transform 0.2s linear;
 
 	svg {
@@ -130,11 +131,16 @@ a, a:visited {
 	flex-direction: row;
 	justify-content: center;
 	left: 0;
-	bottom: 100px;
+	bottom: 80px;
 	width: 100%;
+	height: 25vh;
 	pointer-events: none;
+	z-index: 0;
 
 	.skillbars {
+		display: flex;
+		flex-direction: row;
+		height: 100%;
 		font-size: 0;
 		opacity: 0;
 		transition: opacity 1s 1s ease-in;
@@ -145,13 +151,17 @@ a, a:visited {
 		}
 
 		.skillbar-group {
-			display: inline-block;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			height: 100%;
 		}
 
 		.skillbar {
 			position: relative;
+			//display: inline-block;
 			background-color: #fff;
-			display: inline-block;
+			vertical-align: bottom;
 			opacity: 0.5;
 			border-radius: 2px;
 			transition: height 0.4s ease-in, opacity 0.4s ease, background-color 0.4s ease, color 0.4s ease;
@@ -190,7 +200,7 @@ a, a:visited {
 		transition: transform 5s 2s ease;
 
 		h1, h2, time, p {
-			opacity: 1;
+			opacity: 0.9;
 		}
 
 		p {
@@ -212,7 +222,7 @@ a, a:visited {
 	}
 
 	h1, h2, time {
-		opacity: 0.8;
+		opacity: 0.7;
 	}
 
 	h1 {

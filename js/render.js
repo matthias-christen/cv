@@ -350,7 +350,9 @@ Renderer.prototype.displayInfo = function(show, d, i)
 
     d3.select('.skillbars').classed('is-visible', show);
 
+    var maxSkillLevel = d.skills ? Math.max.apply(null, d.skills.map(function(d) { return d.level; })) : 0;
     var lenSkills = (d.skills && d.skills.length) || 0;
+
     for (var i = 0; i < lenSkills; i++)
     {
         var skill = d.skills[i];
@@ -364,7 +366,7 @@ Renderer.prototype.displayInfo = function(show, d, i)
                 .style('opacity', 0.9)
                 .style('color', '#fff')
                 .style('background-color', 'hsl(' + bar.attr('data-hue') + ', 50%, 50%)')
-                .style('height', (skill.level * 50 + 80) + 'px');
+                .style('height', (skill.level / maxSkillLevel * 100) + '%');
         }
         else
         {
