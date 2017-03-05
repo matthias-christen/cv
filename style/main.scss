@@ -1,0 +1,343 @@
+@import 'typography';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	@include fontNormal;
+	margin: 0;
+	font-family: Roboto;
+	line-height: 1.4;
+	overflow: hidden;
+}
+
+ul {
+	padding: 0 0 0 16px;
+	margin: 0;
+}
+
+li:not(:last-child) {
+	margin-bottom: 0.5em;
+}
+
+h1 {
+	@include fontHuge;
+	position: relative;
+	font-weight: 300;
+	color: #fff;
+	text-align: center;
+	z-index: 1;
+}
+
+legend {
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+	color: #fff;
+	text-align: center;
+	font-weight: 300;
+
+	ul {
+		display: inline-block;
+		list-style: none;
+	}
+
+	li {
+		float: left;
+		margin: 0 16px;
+		border-bottom: 5px solid #fff;
+	}
+}
+
+a, a:visited {
+	color: deepskyblue;
+	text-decoration: none;
+}
+
+.background {
+	position: fixed;
+	left: -5vw;
+	top: -5vh;
+	width: 110vw;
+	height: 110vh;
+	background-size: cover;
+	background-position: 50% 50%;
+	filter: blur(5px);
+	transition: opacity 2s ease;
+}
+
+.chart {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	transition: transform 0.2s linear;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		height: 200px;
+		margin-top: -50px;
+	}
+}
+
+.skills {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: 120px;
+
+	.skill-set {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 2s 1s ease;
+
+		&.is-visible {
+			opacity: 1;
+			transition: opacity 2s ease;
+		}
+	}
+
+	.skill {
+		@include fontSmaller;	
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		border-radius: 50%;
+		text-align: center;
+		opacity: 0.8;
+		color: #333;
+		font-weight: 700;
+		//text-shadow: 0 0 2px #000;
+		//border: 2px solid #333;
+		font-weight: 300;
+		transition: opacity 0.4s ease, transform 0.4s ease;
+
+		&:hover {
+			opacity: 1;
+			transform: scale(1.1);
+		}
+	}
+}
+
+.skillbars-container {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	left: 0;
+	bottom: 100px;
+	width: 100%;
+
+	.skillbars {
+		font-size: 0;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 1s 1s ease-in;
+
+		&.is-visible {
+			opacity: 1;
+			transition: opacity 0.2s ease-out;
+		}
+
+		.skillbar-group {
+			display: inline-block;
+		}
+
+		.skillbar {
+			position: relative;
+			background-color: #fff;
+			display: inline-block;
+			opacity: 0.5;
+			border-radius: 2px;
+			transition: height 0.4s ease-in, opacity 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+
+			> div {
+				@include fontSmall;
+				position: absolute;
+				left: 50%;
+				margin-left: -8px;
+				bottom: -10px;
+				transform-origin: 0 0;
+				transform: rotate(-90deg);
+				//font-weight: 700;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+.info-box {
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	max-width: 200px;
+	padding: 4px 0;
+	transform: scale(1);
+	transition: transform 1s 1s ease;
+	//pointer-events: none;
+	perspective: 1000px;
+
+	&.is-text-visible {
+		max-height: 1000px;
+		//transform: scale(1.2);
+		z-index: 1000;
+		//pointer-events: all;
+		transition: transform 5s 2s ease;
+
+		h1, h2, time, p {
+			opacity: 1;
+		}
+
+		p {
+			transform: rotateX(0deg);
+			transition: transform 0.4s ease, opacity 0.4s ease;
+		}
+	}
+
+	h1, h2, time, p {
+		display: inline-block;
+		min-width: 100px;
+		padding: 2px 8px;
+		margin: 0;
+		color: #000;
+		background-color: #fff;
+		text-align: left;
+		transition: opacity 0.4s ease;
+		font-weight: 300;
+	}
+
+	h1, h2, time {
+		opacity: 0.8;
+	}
+
+	h1 {
+		@include fontLarge;
+		padding: 4px 8px;
+		//font-weight: 300;
+		cursor: pointer;
+		//pointer-events: all;
+		border-bottom: 5px solid cyan;
+		//transform: translate(0, -0.5px);
+	}
+
+	h2 {
+		@include fontNormal;
+		//transform: translate(0, -0.25px);
+	}
+
+	time {
+		display: inline-block;
+		padding-top: 4px;
+	}
+
+	p {
+		//@include fontSmaller;
+		@include fontNormal;
+		opacity: 0;
+		width: 200px;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		font-weight: 300;
+		//pointer-events: all;
+		transform: rotateX(90deg);
+		transform-origin: 0 0;
+		transition: transform 0.4s ease, opacity 0.4s 0.4s ease;
+	}
+}
+
+circle.stop {
+	fill: #fff;
+	stroke: #000;
+	stroke-width: 3px;
+	transition: r 0.4s ease, stroke 0.4s ease, fill 0.4s ease;
+	cursor: pointer;
+}
+
+.life-line {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 4px;
+	opacity: 0.5;
+}
+
+.fine-line {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 0.5px;
+}
+
+#scroll-left, #scroll-right {
+	@include fontHuge;
+	position: absolute;
+	top: 0;
+	width: 10%;
+	max-width: 50px;
+	height: 100vh;
+	color: #fff; 
+	background-color: rgba(255, 255, 255, 0.3);
+	font-size: 60px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 100vh;
+	opacity: 0.4;
+	transition: opacity 0.4s ease;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+#scroll-left {
+	left: 0;
+}
+
+#scroll-right {
+	right: 0;
+}
+
+.social-icons {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 0 15px 0;
+
+	.social-icon {
+		display: inline-block;
+		margin: 0 1em;
+		opacity: 0.8;
+		transition: opacity 0.4s ease, transform 0.4s ease;
+
+		&:hover {
+			opacity: 1;
+			transform: translate(0, -5px);
+		}
+
+		&.pdf-cv {
+			margin-left: 1em;
+			padding-left: 2em;
+			border-left: 1px solid rgba(255, 255, 255, 0.5);
+		}
+
+		img {
+			width: auto;
+			height: 20px;
+		}
+	}
+}
+
+#measureWidth {
+	@include fontSmaller;
+	opacity: 0;
+	pointer-events: none;
+	white-space: nowrap;
+	font-weight: 700;
+}

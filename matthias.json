@@ -1,0 +1,453 @@
+{
+	"title": "Curriculum Vitae von Matthias Christen",
+	"monthNames": [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ],
+	"social": [
+		{ "icon": "assets/icons/linkedin.svg", "href": "https://www.linkedin.com/in/matthias-christen-58a8b7b/" },
+		{ "icon": "assets/icons/github.svg", "href": "https://github.com/matthias-christen" },
+		{ "icon": "assets/icons/gplus.svg", "href": "https://plus.google.com/u/0/101648638387211662425" },
+		{ "icon": "assets/icons/500px.svg", "href": "https://500px.com/matthiAssemblerchristen" }
+	],
+	"pdfCV": "assets/CV_Matthias_Christen.pdf",
+	"skills": [
+		[ "Deutsch", "English", "Français", "Italiano" ],
+		[ "Präsentieren", "Wissenschaftliches Schreiben" ],
+		[ "Compiler-Technologien", "High Performance Computing", "Knotentheorie", "PDEs", "Simulation, Optimierung", "Webtechnologien" ],
+		[ "Assembler", "C/C++", "C#", "CUDA", "Fortran", "Java", "JavaScript", "Matlab", "MorphX/X++", "MPI", "ObjectiveC", "OpenMP", "PHP", "Python", "SQL", "TypeScript", "Visual Basic" ],
+		[ "CSS", "HTML", "Jade/pug", "Sass", "XML", "XML Schema", "XSLT" ],
+		[ "ActiveX", "Cordova", "node.js", "Meteor", "MongoDB", "MySQL", "LaTeX" ]
+	],
+	"items": [
+		{
+			"date": "*17. April 1980",
+			"title": "Matthias Christen",
+			"text": "<ul><li>Familienstand: ledig</li><li>Staatsangehörigkeit: Schweiz</li><li>Heimatort: Affoltern BE</li></ul>",
+			"background": "assets/images/IMG_2674-HDR.jpg",
+			"languages": [
+				{ "language": "Deutsch", "description": "Muttersprache" },
+				{ "language": "English", "description": "Write and speak fluently" }
+			],
+			"type": "Ereignis",
+			"skills": [
+				{ "name": "Deutsch", "level": 3 },
+				{ "name": "English", "level": 2 },
+				{ "name": "Français", "level": 1.4 },
+				{ "name": "Italiano", "level": 1.4 }
+			]
+		},
+		{
+			"date": "1987 – 1999",
+			"title": "Schule",
+			"text": "<ul><li>Rudolf Steiner-Schule Sihlau (Adliswil ZH)</li><li>Rudolf Steiner-Schule Basel</li></ul>",
+			"background": "",
+			"languages": [
+				{ "language": "Français", "description": "Notions élémentaires" }
+			],
+			"type": "Ausbildung",
+			"offsetY": 70,
+			"length": 0.8
+		},
+		{
+			"date": "1996",
+			"title": "Erster Computer",
+			"text": "Entdeckung der Faszination «Programmieren», erste Schritte mit QBASIC und Turbo Pascal für Windows",
+			"skills": [
+				{ "name": "QBASIC", "level": 1.4 },
+				{ "name": "Turbo Pascal", "level": 1.4 },
+				{ "name": "C/C++", "level": 1.4 },
+				{ "name": "Visual Basic", "level": 1.4 },
+				{ "name": "Assembler", "level": 1.4 },
+				{ "name": "HTML", "level": 1 },
+				{ "name": "CSS", "level": 1 },
+				{ "name": "JavaScript", "level": 1 }
+			],
+			"length": 1,
+			"type": "Ereignis",
+			"offsetY": 20
+		},
+		{
+			"date": "1999",
+			"title": "«Fraktale Geometrie – Ästhetik des Chaos»",
+			"subtitle": "Abschlussarbeit",
+			"text": "Untersuchung von Fraktalen und Programme zu deren Erzeugung (Mandelbrot-/Julia-Mengen, Lindenmayer-Systeme, Iterierte Funktionensysteme)",
+			"skills": [
+				{ "name": "C/C++", "level": 3 },
+				{ "name": "Assembler", "level": 2 }
+			],
+			"length": 1,
+			"offsetY": -100,
+			"type": "Projekt"
+		},
+		{
+			"date": "2000",
+			"title": "Matura",
+			"text": "Gymnasium am Kirschgarten, Basel<br>Typus C",
+			"type": "Ausbildung",
+			"offsetY": 30,
+			"length": 0.8
+		},
+		{
+			"date": "August 2000 – April 2003",
+			"title": "Applikationsentwickler",
+			"subtitle": "interpro GmbH, Arlesheim",
+			"text": "<ul><li>Weiter- und Neuentwicklungen innerhalb des ERP-Systems «Axapta» (jetzt: «Microsoft Dynamics AX»)</li><li>Neuentwicklung von Windows-Applikationen</li><li>Neuentwicklung von ActiveX-Komponenten</li><li>Weiterentwicklung interner Tools</li></ul>",
+			"type": "Berufserfahrung",
+			"skills": [
+				{ "name": "MS Access", "level": 1.4 },
+				{ "name": "Visual Basic", "level": 2.5 },
+				{ "name": "MorphX/X++", "level": 3 },
+				{ "name": "C#", "level": 1 },
+				{ "name": "C/C++", "level": 2.5 },
+				{ "name": "ActiveX", "level": 1.4 },
+				{ "name": "SQL", "level": 1.6 },
+				{ "name": "HTML", "level": 1 },
+				{ "name": "CSS", "level": 1 }
+			],
+			"length": 1
+		},
+		{
+			"date": "2000 – 2006",
+			"title": "Diplom Mathematik",
+			"subtitle": "Universität Basel",
+			"text": "<ul><li>Dipl. Mathematiker, Note 5.5</li><li>Nebenfach Informatik, Wahlfach Musikwissenschaft</li><li>Diplomarbeit (bei Prof. Dr. N. A’Campo): «Recursively Computing The Khovanov Homology Of Slalom Knots», Note 6</li></ul>",
+			"length": 1,
+			"skills": [
+				{ "name": "HTML", "level": 1.4 },
+				{ "name": "CSS", "level": 1.4 },
+				{ "name": "JavaScript", "level": 1.4 },
+				{ "name": "Java", "level": 2 },
+				{ "name": "LaTeX", "level": 2 },
+				{ "name": "Matlab", "level": 2 },
+				{ "name": "Maple", "level": 1.4 },
+				{ "name": "XML", "level": 1.4 },
+				{ "name": "XSLT", "level": 1.4 },
+				{ "name": "XML Schema", "level": 1.4 },
+				{ "name": "Knotentheorie", "level": 2.5 },
+				{ "name": "CVS", "level": 1.4 },
+				{ "name": "SVN", "level": 1.4 },
+				{ "name": "Webtechnologien", "level": 2 }
+			],
+			"background": "assets/images/IMG_3254.jpg",
+			"type": "Ausbildung",
+			"length": 1.6,
+			"offsetY": -80
+		},
+		{
+			"date": "2000",
+			"title": "OurClass",
+			"text": "Erstes grösseres Web-Projekt<br>Online-Dienst zur Verwaltung der Adressen von (ehemaligen) Klassenkameraden",
+			"skills": [
+				{ "name": "PHP", "level": 2 },
+				{ "name": "MySQL", "level": 1.4 },
+				{ "name": "HTML", "level": 1 },
+				{ "name": "CSS", "level": 1 },
+				{ "name": "JavaScript", "level": 1 }
+			],
+			"type": "Projekt",
+			"length": 0.7,
+			"offsetY": 70
+		},
+		{
+			"date": "2001",
+			"title": "CdCoverCreator",
+			"text": "<a href='http://thyante.com/index.php?cdcovercreator' target='_blank'>Desktop-Anwendung</a> für die Erstellung von CD-Covers und -Booklets",
+			"skills": [
+				{ "name": "C/C++", "level": 3 }
+			],
+			"type": "Projekt",
+			"offsetY": -10
+		},
+		{
+			"date": "Oktober 2003",
+			"title": "Applikationsentwickler",
+			"subtitle": "Ritter electronics, Arlesheim",
+			"text": "Neuentwicklung Interface Excel/Axapta",
+			"skills": [
+				{ "name": "C/C++", "level": 1.4 }
+			],
+			"type": "Berufserfahrung",
+			"length": 1.3,
+			"offsetY": -120
+		},
+		{
+			"date": "Oktober 2003 – Juli 2005",
+			"title": "Hilfswissenschaftler",
+			"subtitle": "Universität Basel",
+			"text": "<ul><li>Betreuung von Studierenden im Bereich Webtechnologien</li><li>Entwicklung eines grafischen XML-Editors für den E-Learning-Bereich für die pharmazeutischen Wissenschaften</li></ul>",
+			"skills": [
+				{ "name": "Java", "level": 3 },
+				{ "name": "XML", "level": 2 },
+				{ "name": "XML Schema", "level": 1.8 },
+				{ "name": "Webtechnologien", "level": 3 }
+			],
+			"type": "Berufserfahrung",
+			"length": 0.7,
+			"offsetY": 50
+		},
+		{
+			"date": "2003",
+			"title": "University Calendar Online",
+			"text": "Team-Projektarbeit Informatik zur Erfassung und Darstellung (Online- und Druckversion) des detaillierten Vorlesungsverzeichnisses im Fachbereich Mathematik, Physik, Informatik",
+			"skills": [
+				{ "name": "Java", "level": 3 },
+				{ "name": "HTML", "level": 2 },
+				{ "name": "CSS", "level": 2 },
+				{ "name": "JavaScript", "level": 2 },
+				{ "name": "XML", "level": 3 },
+				{ "name": "Webtechnologien", "level": 3 },
+				{ "name": "LaTeX", "level": 2 },
+				{ "name": "XML Schema", "level": 1.5 },
+				{ "name": "XSLT", "level": 2 },
+				{ "name": "Wissenschaftliches Schreiben", "level": 1 }
+			],
+			"type": "Projekt",
+			"offsetY": -20
+		},
+		{
+			"date": "Oktober 2005 – November 2006",
+			"title": "Zivildienst",
+			"subtitle": "Schweizerische Orchideenstiftung am Herbarium Jany Renz, Basel",
+			"text": "<ul><li>Weiterentwicklung der internen web-basieren Tools zur digitalen Archivierung von Beständen</li><li>Konzeption und Neuentwicklung Katalogisierungssoftware</li></ul>",
+			"skills": [
+				{ "name": "PHP", "level": 3 },
+				{ "name": "HTML", "level": 1.4 },
+				{ "name": "CSS", "level": 1.4 },
+				{ "name": "JavaScript", "level": 1.4 },
+				{ "name": "Java", "level": 3 },
+				{ "name": "MySQL", "level": 2 },
+				{ "name": "SQL", "level": 2 }
+			],
+			"type": "Berufserfahrung",
+			"length": 1.8,
+			"offsetY": -40
+		},
+		{
+			"date": "Dezember 2006",
+			"title": "Applikationsentwickler",
+			"subtitle": "HWI Solutions AG, Oberwil",
+			"text": "Portierung von Steuererklärungssoftware auf Java",
+			"skills": [
+				{ "name": "Java", "level": 2 }
+			],
+			"type": "Berufserfahrung",
+			"background": "assets/images/IMG_3025.jpg",
+			"offsetY": 10
+		},
+		{
+			"date": "2007 – 2011",
+			"title": "Doktorat Informatik",
+			"subtitle": "Universität Basel",
+			"text": "<ul><li>Dr. phil. nat., magna cum laude</li><li>Doktorand in der High Performance and Web Computing Group bei Prof. Dr. H. Burkhart</li><li>Forschungsgebiete: High Performance Computing, Scientific Computing, Compiler-Technologien, Auto-Tuning, Optimierung</li><li>Dissertationsprojekt <a href='https://github.com/matthias-christen/patus' target='_blank'>«Patus»</a><li>Dissertation: <a href='http://edoc.unibas.ch/1418/' target='_blank'>«Generating and Auto-Tuning Parallel Stencil Codes»</a>, Hartung-Gorre Verlag, ISBN 978-3-86628-409-8</li></ul>",
+			"skills": [
+				{ "name": "Code-Gen.", "level": 1.4 },
+				{ "name": "Auto-Tuning", "level": 1.4 },
+				{ "name": "Compiler-Technologien", "level": 3 },
+				{ "name": "Wissenschaftliches Schreiben", "level": 3 },
+				{ "name": "Präsentieren", "level": 2 },
+				{ "name": "Java", "level": 3 },
+				{ "name": "C/C++", "level": 2 },
+				{ "name": "High Performance Computing", "level": 4 },
+				{ "name": "Fortran", "level": 1.4 },
+				{ "name": "OpenMP", "level": 2.5 },
+				{ "name": "MPI", "level": 2.5 },
+				{ "name": "CUDA", "level": 2 },
+				{ "name": "Matlab", "level": 1.4 },
+				{ "name": "LaTeX", "level": 2.5 },
+				{ "name": "Python", "level": 1.4 },
+				{ "name": "Simulation, Optimierung", "level": 2 },
+				{ "name": "PDEs", "level": 1 },
+				{ "name": "SVN", "level": 1.4 },
+				{ "name": "XML", "level": 1 }
+			],
+			"background": "assets/images/IMG_2470-HDR.jpg",
+			"length": 1.8,
+			"offsetY": -60,
+			"type": "Ausbildung"
+		},
+		{
+			"date": "2009-2012",
+			"title": "Patus",
+			"subtitle": "Dissertationsprojekt",
+			"text": "Code-Generator und Auto-Tuner für parallele Stencil-Codes, <a href='https://github.com/matthias-christen/patus' target='_blank'>github.com/matthias-christen/patus</a>",
+			"skills": [
+				{ "name": "Compiler-Technologien", "level": 3 },
+				{ "name": "Java", "level": 3 },
+				{ "name": "C/C++", "level": 2 },
+				{ "name": "High Performance Computing", "level": 3 },
+				{ "name": "OpenMP", "level": 2.5 },
+				{ "name": "MPI", "level": 1.5 },
+				{ "name": "CUDA", "level": 2 },
+				{ "name": "LaTeX", "level": 1 },
+				{ "name": "PDEs", "level": 1 },
+				{ "name": "XML", "level": 1 }
+			],
+			"type": "Projekt",
+			"length": 0.8
+		},
+		{
+			"date": "August 2009 – Oktober 2009",
+			"title": "Intern",
+			"subtitle": "Laurence Berkeley National Lab, Berkeley CA, USA",
+			"text": "<ul><li>Intern in der Computational Research Division</li><li>Performance Benchmarks und Auto-Tuning</li></ul>",
+			"skills": [
+				{ "name": "Code-Gen.", "level": 1.4 },
+				{ "name": "Auto-Tuning", "level": 1.4 },
+				{ "name": "High Performance Computing", "level": 4 },
+				{ "name": "Fortran", "level": 3 },
+				{ "name": "C/C++", "level": 2.5 }
+			],
+			"background": "assets/images/IMG_9660.jpg",
+			"type": "Berufserfahrung",
+			"offsetY": -30,
+			"length": 1.2
+		},
+		{
+			"date": "Oktober 2010 – Dezember 2010",
+			"title": "Intern",
+			"subtitle": "Laurence Berkeley National Lab, Berkeley CA, USA",
+			"text": "<ul><li>Intern in der Computational Research Division</li><li>Code-Transformationen und Auto-Tuning für wissenschaftliche Software</li><li>Performance-Benchmarking auf HPC-Systemen</li><li>Schreiben von wissenschaftlichen Publikationen</li></ul>",
+			"skills": [
+				{ "name": "Code-Gen.", "level": 1.4 },
+				{ "name": "Auto-Tuning", "level": 1.4 },
+				{ "name": "Wissenschaftliches Schreiben", "level": 2 },
+				{ "name": "C/C++", "level": 2 },
+				{ "name": "High Performance Computing", "level": 2 },
+				{ "name": "Fortran", "level": 1.4 },
+				{ "name": "Perl", "level": 2 }
+			],
+			"background": "assets/images/IMG_9576.jpg",
+			"type": "Berufserfahrung",
+			"offsetY": 50
+		},
+		{
+			"date": "Januar 2012 – Dezember 2012",
+			"title": "PostDoc",
+			"subtitle": "Università della Svizzera italiana, Lugano",
+			"text": "<ul><li>PostDoc am Institute of Computational Science bei Prof. Dr. O. Schenk</li><li>Weiterentwicklung am Forschungsprojekt <a href='https://github.com/matthias-christen/patus' target='_blank'>«Patus»</a></li></ul>",
+			"skills": [
+				{ "name": "Code-Gen.", "level": 1.4 },
+				{ "name": "Auto-Tuning", "level": 1.4 },
+				{ "name": "Java", "level": 2 },
+				{ "name": "C/C++", "level": 2 },
+				{ "name": "Assembler", "level": 1.4 },
+				{ "name": "Wissenschaftliches Schreiben", "level": 3 },
+				{ "name": "Präsentieren", "level": 2 },
+				{ "name": "High Performance Computing", "level": 3 },
+				{ "name": "LaTeX", "level": 1.4 },
+				{ "name": "Compiler-Technologien", "level": 2 }
+			],
+			"background": "assets/images/IMG_4308.jpg",
+			"length": 2,
+			"type": "Berufserfahrung"
+		},
+		{
+			"date": "Seit Januar 2013",
+			"title": "Senior Software Architect",
+			"subtitle": "Vanamco AG, Zürich",
+			"text": "<ul><li>Architektur und Entwicklung von Desktop-Applikationen (UI, Netzwerk, Compiler-Technologien)</li><li>Architektur und Entwicklung von web-basierter Software</li><li>Neuentwicklungen von hybriden mobilen Apps</li><li>Neu-/Weiterentwicklungen im Web-Frontend-Bereich</li><li>Neuentwicklungen interner Tools</li></ul>",
+			"skills": [
+				{ "name": "C/C++", "level": 2.5 },
+				{ "name": "ObjectiveC", "level": 1.8 },
+				{ "name": "Cocoa", "level": 1.8 },
+				{ "name": "JavaScript", "level": 3.5 },
+				{ "name": "TypeScript", "level": 3.5 },
+				{ "name": "HTML", "level": 3 },
+				{ "name": "Jade/pug", "level": 2 },
+				{ "name": "CSS", "level": 3 },
+				{ "name": "Sass", "level": 3 },
+				{ "name": "node.js", "level": 4 },
+				{ "name": "Python", "level": 1 },
+				{ "name": "Cordova", "level": 1.4 },
+				{ "name": "Meteor", "level": 2.5 },
+				{ "name": "PHP", "level": 1.5 },
+				{ "name": "git", "level": 1.4 },
+				{ "name": "MySQL", "level": 1 },
+				{ "name": "SQL", "level": 1 },
+				{ "name": "MongoDB", "level": 1.5 },
+				{ "name": "XML", "level": 1 },
+				{ "name": "Compiler-Technologien", "level": 1 }
+			],
+			"type": "Berufserfahrung",
+			"background": "assets/images/IMG_2591.jpg",
+			"length": 2,
+			"offsetY": -50
+		},
+		{
+			"date": "Seit Januar 2013",
+			"title": "Ghostlab",
+			"text": "«Synchronized web development, testing, and inspection»<br><a href='https://www.vanamco.com/ghostlab' target='_blank'>www.vanamco.com/ghostlab</a>",
+			"type": "Projekt",
+			"skills": [
+				{ "name": "C/C++", "level": 2 },
+				{ "name": "ObjectiveC", "level": 1.4 },
+				{ "name": "Cocoa", "level": 1.4 },
+				{ "name": "JavaScript", "level": 3 },
+				{ "name": "TypeScript", "level": 3 },
+				{ "name": "Jade/pug", "level": 2 },
+				{ "name": "CSS", "level": 2 },
+				{ "name": "Sass", "level": 2 },
+				{ "name": "node.js", "level": 3 },
+				{ "name": "Python", "level": 1.4 },
+				{ "name": "git", "level": 1.4 },
+				{ "name": "Compiler-Technologien", "level": 1 }
+			],
+			"background": "assets/images/IMG_1540-2.jpg",
+			"length": 0.6
+		},
+		{
+			"date": "",
+			"title": "Here I am",
+			"type": "Ereignis",
+			"background": "assets/images/IMG_2591.jpg",
+			"offsetY": 20,
+			"skills": [
+				{ "name": "Deutsch", "level": 4 },
+				{ "name": "English", "level": 3.5 },
+				{ "name": "Français", "level": 1 },
+				{ "name": "Italiano", "level": 1 },
+				{ "name": "Wissenschaftliches Schreiben", "level": 1.5 },
+				{ "name": "Präsentieren", "level": 1 },
+				{ "name": "Assembler", "level": 2.5 },
+				{ "name": "C/C++", "level": 3 },
+				{ "name": "C#", "level": 1.5 },
+				{ "name": "CUDA", "level": 1 },
+				{ "name": "Fortran", "level": 1 },
+				{ "name": "Java", "level": 1.5 },
+				{ "name": "JavaScript", "level": 4 },
+				{ "name": "Matlab", "level": 1 },
+				{ "name": "MPI", "level": 1 },
+				{ "name": "MorphX/X++", "level": 1 },
+				{ "name": "ObjectiveC", "level": 2 },
+				{ "name": "OpenMP", "level": 1 },
+				{ "name": "Cocoa", "level": 1.5 },
+				{ "name": "TypeScript", "level": 4 },
+				{ "name": "Visual Basic", "level": 1 },
+				{ "name": "HTML", "level": 4 },
+				{ "name": "Jade/pug", "level": 3.5 },
+				{ "name": "CSS", "level": 4 },
+				{ "name": "Sass", "level": 4 },
+				{ "name": "node.js", "level": 4 },
+				{ "name": "Python", "level": 1 },
+				{ "name": "Cordova", "level": 1 },
+				{ "name": "Meteor", "level": 2.5 },
+				{ "name": "PHP", "level": 2.5 },
+				{ "name": "git", "level": 1.4 },
+				{ "name": "MySQL", "level": 2 },
+				{ "name": "SQL", "level": 2 },
+				{ "name": "MongoDB", "level": 2 },
+				{ "name": "XML", "level": 2 },
+				{ "name": "XML Schema", "level": 1 },
+				{ "name": "XSLT", "level": 1 },
+				{ "name": "Compiler-Technologien", "level": 1.5 },
+				{ "name": "High Performance Computing", "level": 1.5 },
+				{ "name": "Knotentheorie", "level": 1 },
+				{ "name": "PDEs", "level": 1 },
+				{ "name": "Simulation, Optimierung", "level": 1 },
+				{ "name": "Webtechnologien", "level": 4 },
+				{ "name": "ActiveX", "level": 1 },
+				{ "name": "LaTeX", "level": 1 }
+			],
+			"offsetY": 70,
+			"length": 1.3
+		}
+	]
+}
