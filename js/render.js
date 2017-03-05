@@ -451,17 +451,20 @@ Renderer.prototype.createScroller = function()
             }, 200);
         }
     };
+
+    var onMouseWheel = function(event)
+    {
+        event.preventDefault();
+        that.setScroll(that.scrollX + event.deltaX);
+    };
     
     eltScrollLeft.addEventListener('mouseenter', setScroll.bind(null, -50));
     eltScrollLeft.addEventListener('mouseleave', stopScrolling);
     eltScrollRight.addEventListener('mouseenter', setScroll.bind(null, 50));
     eltScrollRight.addEventListener('mouseleave', stopScrolling);
 
-    document.addEventListener('mousewheel', function(event)
-    {
-        event.preventDefault();
-        that.setScroll(that.scrollX + event.deltaX);
-    });
+    document.addEventListener('mousewheel', onMouseWheel);
+    document.addEventListener('wheel', onMouseWheel);
 };
 
 Renderer.prototype.createBlurer = function()
