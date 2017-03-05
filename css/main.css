@@ -151,10 +151,10 @@ a, a:visited {
   justify-content: center;
   left: 0;
   bottom: 100px;
-  width: 100%; }
+  width: 100%;
+  pointer-events: none; }
   .skillbars-container .skillbars {
     font-size: 0;
-    pointer-events: none;
     opacity: 0;
     transition: opacity 1s 1s ease-in; }
     .skillbars-container .skillbars.is-visible {

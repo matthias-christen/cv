@@ -32,7 +32,8 @@
 				{ "name": "English", "level": 2 },
 				{ "name": "Français", "level": 1.4 },
 				{ "name": "Italiano", "level": 1.4 }
-			]
+			],
+			"offsetY": -60
 		},
 		{
 			"date": "1987 – 1999",
@@ -43,7 +44,7 @@
 				{ "language": "Français", "description": "Notions élémentaires" }
 			],
 			"type": "Ausbildung",
-			"offsetY": 70,
+			"offsetY": 0,
 			"length": 0.8
 		},
 		{
@@ -154,7 +155,8 @@
 				{ "name": "C/C++", "level": 3 }
 			],
 			"type": "Projekt",
-			"offsetY": -10
+			"offsetY": -10,
+			"length": 1.6
 		},
 		{
 			"date": "Oktober 2003",
@@ -200,7 +202,8 @@
 				{ "name": "Wissenschaftliches Schreiben", "level": 1 }
 			],
 			"type": "Projekt",
-			"offsetY": -20
+			"offsetY": -20,
+			"length": 1.6
 		},
 		{
 			"date": "Oktober 2005 – November 2006",
@@ -281,7 +284,7 @@
 				{ "name": "XML", "level": 1 }
 			],
 			"type": "Projekt",
-			"length": 0.8
+			"length": 1.7
 		},
 		{
 			"date": "August 2009 – Oktober 2009",
@@ -391,7 +394,7 @@
 				{ "name": "Compiler-Technologien", "level": 1 }
 			],
 			"background": "assets/images/IMG_1540-2.jpg",
-			"length": 0.6
+			"length": 1.5
 		},
 		{
 			"date": "",

@@ -132,10 +132,10 @@ a, a:visited {
 	left: 0;
 	bottom: 100px;
 	width: 100%;
+	pointer-events: none;
 
 	.skillbars {
 		font-size: 0;
-		pointer-events: none;
 		opacity: 0;
 		transition: opacity 1s 1s ease-in;
 
