@@ -64,10 +64,17 @@ h1 {
   font-size: 34px;
   letter-spacing: 0.2px;
   position: relative;
+  padding: 0 60px;
+  margin: 0.5rem 0;
   font-weight: 300;
+  font-size: 24px;
   color: #fff;
   text-align: center;
   z-index: 1; }
+  @media (min-width: 640px) and (min-height: 640px) {
+    h1 {
+      margin: 2rem 0;
+      font-size: 34px; } }
 
 legend {
   position: relative;
@@ -96,6 +103,7 @@ a, a:visited {
   height: 110vh;
   background-size: cover;
   background-position: 50% 50%;
+  -webkit-filter: blur(5px);
   filter: blur(5px);
   transition: opacity 2s ease; }
 
@@ -130,8 +138,15 @@ a, a:visited {
     font-size: 11px;
     letter-spacing: 0.066px;
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     border-radius: 50%;
@@ -147,8 +162,13 @@ a, a:visited {
 
 .skillbars-container {
   position: absolute;
-  display: flex;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   left: 0;
   bottom: 80px;
@@ -156,8 +176,18 @@ a, a:visited {
   height: 25vh;
   pointer-events: none;
   z-index: 0; }
+  @media (min-width: 640px) and (min-height: 640px) {
+    .skillbars-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
   .skillbars-container .skillbars {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     height: 100%;
     font-size: 0;
@@ -167,8 +197,15 @@ a, a:visited {
       opacity: 1;
       transition: opacity 0.2s ease-out; }
     .skillbars-container .skillbars .skillbar-group {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
       align-items: flex-end;
       height: 100%; }
     .skillbars-container .skillbars .skillbar {
@@ -186,7 +223,9 @@ a, a:visited {
         left: 50%;
         margin-left: -8px;
         bottom: -10px;
+        -webkit-transform-origin: 0 0;
         transform-origin: 0 0;
+        -webkit-transform: rotate(-90deg);
         transform: rotate(-90deg);
         white-space: nowrap; }
 
@@ -196,18 +235,18 @@ a, a:visited {
   top: 50%;
   max-width: 200px;
   padding: 4px 0;
-  transform: scale(1);
-  transition: transform 1s 1s ease;
+  -webkit-perspective: 1000px;
   perspective: 1000px; }
   .info-box.is-text-visible {
     max-height: 1000px;
     z-index: 1000;
-    transition: transform 5s 2s ease; }
+    transition: transform 5s 2s ease, -webkit-transform 5s 2s ease; }
     .info-box.is-text-visible h1, .info-box.is-text-visible h2, .info-box.is-text-visible time, .info-box.is-text-visible p {
       opacity: 0.9; }
     .info-box.is-text-visible p {
+      -webkit-transform: rotateX(0deg);
       transform: rotateX(0deg);
-      transition: transform 0.4s ease, opacity 0.4s ease; }
+      transition: transform 0.4s ease, -webkit-transform 0.4s ease, opacity 0.4s ease; }
   .info-box h1, .info-box h2, .info-box time, .info-box p {
     display: inline-block;
     min-width: 100px;
@@ -243,9 +282,11 @@ a, a:visited {
     padding-top: 1em;
     padding-bottom: 1em;
     font-weight: 300;
+    -webkit-transform: rotateX(90deg);
     transform: rotateX(90deg);
+    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    transition: transform 0.4s ease, opacity 0.4s 0.4s ease; }
+    transition: transform 0.4s ease, -webkit-transform 0.4s ease, opacity 0.4s 0.4s ease; }
 
 circle.stop {
   fill: #fff;
@@ -281,7 +322,8 @@ circle.stop {
   text-align: center;
   line-height: 100vh;
   opacity: 0.4;
-  transition: opacity 0.4s ease; }
+  transition: opacity 0.4s ease;
+  z-index: 2000; }
   #scroll-left:hover, #scroll-right:hover {
     opacity: 0.6; }
 
@@ -293,8 +335,15 @@ circle.stop {
 
 .social-icons {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   left: 0;
   bottom: 0;

@@ -394,7 +394,8 @@
 				{ "name": "Compiler-Technologien", "level": 1 }
 			],
 			"background": "assets/images/IMG_1540-2.jpg",
-			"length": 1.5
+			"length": 1.6,
+			"offsetY": 20
 		},
 		{
 			"date": "",
@@ -449,8 +450,8 @@
 				{ "name": "ActiveX", "level": 1 },
 				{ "name": "LaTeX", "level": 1 }
 			],
-			"offsetY": 70,
-			"length": 1.3
+			"offsetY": 90,
+			"length": 1.6
 		}
 	]
 }

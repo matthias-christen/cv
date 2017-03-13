@@ -24,6 +24,8 @@ function Renderer(dataUrl, options)
     this.widthSvg = 0;
     this.scrollX = 0;
     this.prevBackground = null;
+    this.tidBackground = null;
+    this.prevBox = null;
 
     // load the data and render
     d3.json(dataUrl, Renderer.prototype.render.bind(this));
@@ -114,6 +116,8 @@ Renderer.prototype.layoutSkills = function()
 
 Renderer.prototype.drawLifeLine = function()
 {
+    var that = this;
+
     var line = d3.line()
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
@@ -136,7 +140,14 @@ Renderer.prototype.drawLifeLine = function()
             .attr('cy', function(d) { return d.y; })
             .attr('r', '5px')
             .on('mouseover', this.showInfo)
-            .on('mouseout', this.hideInfo);
+            .on('mouseout', this.hideInfo)
+            .on('touchstart', function(d, i)
+            {
+                if (that.prevBox)
+                    that.displayInfo(false, that.prevBox.d, that.prevBox.i);
+                that.prevBox = { d: d, i: i };
+                that.displayInfo(true, d, i);
+            });
 
     stopGroup.selectAll('.fine-line')
         .data(this.root.items)
@@ -190,7 +201,9 @@ Renderer.prototype.drawInfoBoxes = function()
         .text(function(d) { return d.title; });
 
     infoBox.filter(function(d) { return !!d.text; })
-        .append('p').html(function(d) { return d.text; });
+        .append('p')
+            .html(function(d) { return d.text; })
+            .on('click', function(i) { alert(d, i) });
 };
 
 Renderer.prototype.drawLegend = function()
@@ -333,13 +346,6 @@ Renderer.prototype.drawSocialIcons = function()
 
 Renderer.prototype.displayInfo = function(show, d, i)
 {
-    /*
-    var target = d3.event.target;
-    if (show && (target.classList.contains('info-box') || target.tagName === 'P' || target.tagName === 'UL' || target.tagName === 'LI'))
-        return;
-    //*/
-    //console.log(d3.event.target);
-
     this.chart.select('.info-box[data-id="' + i + '"]').classed('is-text-visible', show);
     this.skillsContainer.select('[data-id="' + i + '"]').classed('is-visible', show);
     this.chart.select('.stop[data-id="' + i + '"]')
@@ -399,20 +405,28 @@ Renderer.prototype.setBackground = function(d)
     if (!d || !d.background || d.background === this.prevBackground)
         return;
 
-    this.prevBackground = d.background;
+    if (this.tidBackground !== null)
+        clearTimeout(this.tidBackground);
 
     var that = this;
     var img = document.createElement('img');
     img.onload = function()
     {
-        that.background2.style('background-image', 'url(' + d.background + ')');
-        that.background2.style('opacity', 1);
-        that.background1.style('opacity', 0);
+        that.tidBackground = setTimeout(function()
+        {
+            that.background2.style('background-image', 'url(' + d.background + ')');
+            that.background2.style('opacity', 1);
+            that.background1.style('opacity', 0);
 
-        var tmp = that.background1;
-        that.background1 = that.background2;
-        that.background2 = tmp;
+            var tmp = that.background1;
+            that.background1 = that.background2;
+            that.background2 = tmp;    
+
+            that.tidBackground = null;
+            that.prevBackground = d.background;
+        }, 1500);
     };
+
     img.src = d.background;
 };
 
@@ -421,12 +435,18 @@ Renderer.prototype.setScroll = function(scroll)
     this.scrollX = scroll;
     
     var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    var chartScale = Math.min(1, (h * 0.5) / 400);
+    var chartOffsetY = (1 - chartScale) * h * 0.2;
+    var widthSvg = this.widthSvg * chartScale;
+
     if (this.scrollX < -50)
         this.scrollX = -50;
-    else if (this.scrollX >= this.widthSvg - w + 200)
-        this.scrollX = this.widthSvg - w + 200;
-        
-    this.chart.attr('style', 'transform: translate(' + -this.scrollX + 'px, 0);');
+    else if (this.scrollX >= widthSvg - w + 200)
+        this.scrollX = widthSvg - w + 200;
+
+    this.chart.attr('style', 'transform: translate(' + -this.scrollX + 'px, ' + chartOffsetY + 'px) scale(' + chartScale + ');');
 };
 
 Renderer.prototype.createScroller = function()
@@ -460,13 +480,40 @@ Renderer.prototype.createScroller = function()
         that.setScroll(that.scrollX + event.deltaX);
     };
     
-    eltScrollLeft.addEventListener('mouseenter', setScroll.bind(null, -50));
+    var scrollLeft = setScroll.bind(null, -50);
+    var scrollRight = setScroll.bind(null, 50);
+
+    eltScrollLeft.addEventListener('mouseenter', scrollLeft);
     eltScrollLeft.addEventListener('mouseleave', stopScrolling);
-    eltScrollRight.addEventListener('mouseenter', setScroll.bind(null, 50));
+    eltScrollRight.addEventListener('mouseenter', scrollRight);
     eltScrollRight.addEventListener('mouseleave', stopScrolling);
+
+    eltScrollLeft.addEventListener('touchstart', scrollLeft); 
+    eltScrollLeft.addEventListener('touchend', stopScrolling);
+    eltScrollRight.addEventListener('touchstart', scrollRight); 
+    eltScrollRight.addEventListener('touchend', stopScrolling);
 
     document.addEventListener('mousewheel', onMouseWheel);
     document.addEventListener('wheel', onMouseWheel);
+
+    var startX;
+
+    document.addEventListener('touchstart', function(event)
+    {
+        event.preventDefault();
+        startX = that.scrollX + event.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', function(event)
+    {
+        event.preventDefault();
+        that.setScroll(startX - event.touches[0].clientX);
+    });
+
+    document.addEventListener('scroll', function(event)
+    {
+        event.preventDefault();
+    });
 };
 
 Renderer.prototype.createBlurer = function()
