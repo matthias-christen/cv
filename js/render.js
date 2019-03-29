@@ -2,6 +2,7 @@ function Renderer(dataUrl, options)
 {
     // constants
     this.COLORS = options && options.colors || [ 'deeppink', 'deepskyblue', 'yellow', 'springgreen' ];
+    this.PERSON_COLORS = options && options.personColors || [ '#333', '#fff' ];
     this.USE_SKILL_BUBBLES = options && options.useSkillBubbles || false;
     this.LENGTH_FACTOR = options && options.lengthFactor || 120;
     this.LEVEL_FACTOR = options && options.levelFactor || 5;
@@ -20,6 +21,7 @@ function Renderer(dataUrl, options)
 
     this.skillColors = {};
     this.typeColors = {};
+    this.personIndices = {};
 
     this.widthSvg = 0;
     this.scrollX = 0;
@@ -42,8 +44,6 @@ Renderer.prototype.render = function(error, root)
     this.hideInfo = Renderer.prototype.displayInfo.bind(this, false);
 
     this.layoutSkills();
-
-    this.setTitle();
     this.setInitialBackground();
 
     this.drawLifeLine();
@@ -55,6 +55,7 @@ Renderer.prototype.render = function(error, root)
     else
         this.drawSkillBars();
 
+    this.setTitle();
     this.drawSocialIcons();
 
     this.svg
@@ -70,8 +71,25 @@ Renderer.prototype.render = function(error, root)
 
 Renderer.prototype.setTitle = function()
 {
-    d3.select('head title').text(this.root.title);
-    d3.select('h1.title').text(this.root.title);
+    var names = Object.keys(this.personIndices);
+    console.log(names);
+    if (names.length === 1)
+    {
+        d3.select('head title').text(this.root.title);
+        d3.select('h1.title').text(this.root.title);
+    }
+    else
+    {
+        d3.select('head title').text('Curricula Vitae of ' + names.slice(0, -1).join(', ') + (names.length > 2 ? ', ' : ' ') + 'and ' + names[names.length - 1]);
+        d3.select('h1.title').text('Curricula Vitae');
+        d3.select('h2.title')
+            .selectAll('.name')
+            .data(names)
+            .enter()
+            .append('span')
+            .attr('data-personidx', function(d, i) { return i; })
+            .text(function(d) { return d; });
+    }
 };
 
 Renderer.prototype.layoutSkills = function()
@@ -165,6 +183,7 @@ Renderer.prototype.drawInfoBoxes = function()
     var that = this;
     var now = this.root.monthNames[new Date().getMonth()] + ' ' + new Date().getFullYear();
     var lastTypeIdx = 0;
+    var lastPersonIdx = 0;
 
     var infoBox = this.chart.selectAll('.info-box')
         .data(this.root.items)
@@ -172,6 +191,13 @@ Renderer.prototype.drawInfoBoxes = function()
         .append('div')
             .attr('class', 'info-box')
             .attr('data-id', function(d, i) { return i; })
+            .attr('data-personidx', function(d)
+            {
+                var idx = that.personIndices[d.person];
+                if (idx === undefined)
+                    that.personIndices[d.person] = idx = lastPersonIdx++;
+                return idx;            
+            })
             .attr('style', function(d)
             {
                 return (

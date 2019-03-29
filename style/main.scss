@@ -1,5 +1,15 @@
 @import 'typography';
 
+@mixin person0() {
+	color: #000;
+	background-color: #fff;
+}
+
+@mixin person1() {
+	color: #fff;
+	background-color: #000;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -21,22 +31,44 @@ li:not(:last-child) {
 	margin-bottom: 0.5em;
 }
 
-h1 {
-	@include fontHuge;
+h1, h2 {
  	position: relative;
  	padding: 0 60px;
-	margin: 0.5rem 0;
 	font-weight: 300;
-	font-size: 24px;
 	color: #fff;
 	text-align: center;
 	z-index: 1;
+}
 
-	@media (min-width: 640px) and (min-height: 640px)
-	{
-		margin: 2rem 0;
+h1 {
+	@include fontHuge;	
+	font-size: 24px;
+	margin: 0.5rem 0 0;
+
+	@media (min-width: 640px) and (min-height: 640px) {
 		font-size: 34px;
+		margin: 2rem 0 0;
 	}
+}
+
+h2 {
+	@include fontNormal;	
+	font-size: 18px;
+	margin: 0 0 0.5rem;
+	opacity: 0.8;
+
+	@media (min-width: 640px) and (min-height: 640px) {
+		font-size: 22px;
+		margin: 0 0 2rem;
+	}
+
+	span {
+		padding: 0.2rem 0.4rem;
+		margin: 0 0.2rem;
+	}
+
+	[data-personidx="0"] { @include person0; }
+	[data-personidx="1"] { @include person1; }
 }
 
 legend {
@@ -246,6 +278,18 @@ a, a:visited {
 			transform: rotateX(0deg);
 			transition: transform 0.4s ease, -webkit-transform 0.4s ease, opacity 0.4s ease;
 		}
+	}
+
+	&[data-personidx="0"] {
+		h1, h2, time, p {
+			@include person0;
+		} 
+	}
+
+	&[data-personidx="1"] {
+		h1, h2, time, p {
+			@include person1;
+		} 
 	}
 
 	h1, h2, time, p {
